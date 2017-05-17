@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": " <p> <strong>Welcome to MetroHero's public API documentation!</strong> Here you can browse the APIs we currently offer and even give them a try for yourself right from within your web browser. If you have any comments, questions, suggestions or concerns, please email us at <a href='mailto:contact@dcmetrohero.com' target='_blank'>contact@dcmetrohero.com</a>. </p> <p> All of our public APIs are available for free. In return, we require the following: </p> <ul> <li>You must abide by <a href='https://developer.wmata.com/license' target='_blank'>WMATA's Developer License Agreement</a> at all times while using our APIs; by using our APIs, you agree to these terms of service, as a valid WMATA API key is required to use any of our APIs.</li> <li>The data returned by our APIs or derived from data returned by our APIs must be available to everyone. If your website or app, for example, is behind a paywall, that's fine as long as there is a free tier, and that free tier has access to the same data returned by or derived from these APIs that your paying customers do.</li> <li>Any data returned by our APIs or derived from data returned by our APIs must be credited back to MetroHero. If this data is being displayed to users, e.g. on a website or in an app, MetroHero must always be visually credited wherever and whenever the data appears or is used.</li> </ul> <p> Repeat offenders of the above requirements will have their access revoked to our APIs. For legal reasons, we withhold the right to do this for any reason at any time, and make no guarantees about the availability of our APIs or the validity of the data returned by our APIs in general. For more information, see <a href='https://developer.wmata.com/license' target='_blank'>WMATA's Developer License Agreement</a>. </p> <p> A WMATA developer account is required to obtain a WMATA API key, which all of our APIs require. If you do not already have an account, you can create one <a href='https://developer.wmata.com/signup/' target='_blank'>here</a>. In doing so, you agree to <a href='https://developer.wmata.com/license' target='_blank'>WMATA's Developer License Agreement</a>. Each time you make a request to one of our APIs, the API key you specify will be validated by WMATA's servers. If validation is successful, data will be returned, otherwise no data will be returned. </p> ",
+    "description": " <p> <strong>Welcome to MetroHero's public API documentation!</strong> Here you can browse the APIs we currently offer and even give them a try for yourself right from your web browser. If you have any comments, questions, suggestions or concerns, please email us at <a href='mailto:contact@dcmetrohero.com' target='_blank'>contact@dcmetrohero.com</a>. </p> <p> All of our public APIs are available for free. In return, we require the following: <ul> <li>You must abide by <a href='https://developer.wmata.com/license' target='_blank'>WMATA's Developer License Agreement</a> at all times while using our APIs; by using our APIs, you agree to these terms of service, as a valid WMATA API key is required to use any of our APIs.</li> <li>The data returned by our APIs or derived from data returned by our APIs must be available to everyone. If your website or app, for example, is behind a paywall, that's fine as long as there is a free tier, and that free tier has access to the same data returned by or derived from these APIs that your paying customers do.</li> <li>Any data returned by our APIs or derived from data returned by our APIs must be credited back to MetroHero. If this data is being displayed to users, e.g. on a website or in an app, MetroHero must always be visually credited wherever and whenever the data appears or is used.</li> </ul> <p> Repeat offenders of the above requirements will have their access revoked to our APIs. For legal reasons, we withhold the right to do this for any reason at any time, and make no guarantees about the availability of our APIs or the validity of the data returned by our APIs in general. For more information, see <a href='https://developer.wmata.com/license' target='_blank'>WMATA's Developer License Agreement</a>. </p> </p> <p> A WMATA developer account is required to obtain a WMATA API key, which all of our APIs require. If you do not already have an account, you can create one <a href='https://developer.wmata.com/signup/' target='_blank'>here</a>. In doing so, you agree to <a href='https://developer.wmata.com/license' target='_blank'>WMATA's Developer License Agreement</a>. Each time you make a request to one of our APIs, the API key you specify will be validated by WMATA's servers. If validation is successful, data will be returned, otherwise no data will be returned. </p> ",
     "version": "v1",
     "title": "MetroHero APIs",
     "termsOfService": "https://developer.wmata.com/license",
@@ -87,34 +87,42 @@
       "properties": {
         "fromStationName": {
           "type": "string",
-          "description": "The name of the originating station (i.e. fromStation) of the trip."
+          "description": "The name of the originating station (i.e. fromStation) of the trip.",
+          "default": "Vienna",
+          "example": "Vienna"
         },
         "fromStationCode": {
           "type": "string",
-          "description": "The RTU station code of the originating station (i.e. fromStation) of the trip."
+          "description": "The RTU station code of the originating station (i.e. fromStation) of the trip.",
+          "example": "K08"
         },
         "toStationName": {
           "type": "string",
-          "description": "The name of the destination station (i.e. toStation) of the trip."
+          "description": "The name of the destination station (i.e. toStation) of the trip.",
+          "example": "Metro Center"
         },
         "toStationCode": {
           "type": "string",
-          "description": "The RTU station code of the destination station (i.e. toStation) of the trip."
+          "description": "The RTU station code of the destination station (i.e. toStation) of the trip.",
+          "example": "C01"
         },
         "idealTripTime": {
           "type": "integer",
           "format": "int32",
-          "description": "How long the trip is normally expected to take given slightly-less-than-ideal conditions."
+          "description": "How long the trip is normally expected to take given slightly-less-than-ideal conditions.",
+          "example": 26
         },
         "predictedTripTime": {
           "type": "integer",
           "format": "int32",
-          "description": "Predicted trip time once a rider is aboard the next train to service this trip, based on current conditions and/or conditions in the recent past."
+          "description": "Predicted trip time once a rider is aboard the next train to service this trip, based on current conditions and/or conditions in the recent past.",
+          "example": 31
         },
         "averageWaitTime": {
           "type": "integer",
           "format": "int32",
-          "description": "Average predicted wait time for riders waiting on fromStation's platform for the next train to service this trip, based on current conditions and/or conditions in the recent past, and assuming the arrival of riders to fromStation's platform is normally distributed."
+          "description": "Average predicted wait time for riders waiting on fromStation's platform for the next train to service this trip, based on current conditions and/or conditions in the recent past, and assuming the arrival of riders to fromStation's platform is normally distributed.",
+          "example": 7
         }
       }
     }
